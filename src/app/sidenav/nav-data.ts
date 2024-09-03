@@ -5,29 +5,42 @@ export const navbarData = [
         label: 'Dashboard'
     },
     {
-        routeLink: 'products',
-        icon: 'fal fa-box-open',
-        label: 'Products'
-    },
+      "routeLink": "products",
+      "icon": "fal fa-box-open",
+      "label": "Profile",
+      "children": [
+          {
+              "routeLink": "products/student",
+              "icon": "fal fa-eye",
+              "label": "Overview"
+          },
+          {
+              "routeLink": "products/teacher",
+              "icon": "fal fa-info-circle",
+              "label": "Details"
+          }
+      ]
+  }
+,
     {
         routeLink: 'statistics',
         icon: 'fal fa-chart-bar',
-        label: 'Statistics'
+        label: 'Report'
     },
     {
-        routeLink: 'coupens',
+        routeLink: 'favorite',
         icon: 'fal fa-tags',
-        label: 'Coupens'
+        label: 'Favorite'
     },
     {
         routeLink: 'pages',
-        icon: 'fal fa-file',
-        label: 'Pages'
+        icon: 'fal fa-bell',
+        label: 'Notifications'
     },
     {
         routeLink: 'media',
-        icon: 'fal fa-camera',
-        label: 'Media'
+        icon: 'fal fa-book',
+        label: 'History'
     },
     {
         routeLink: 'settings',
