@@ -11,27 +11,22 @@ import { TeacherComponent } from './products/teacher/teacher.component';
 import { StudentComponent } from './products/student/student.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-  {path: 'dashboard', component: DashboardComponent},
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
   {
     path: 'products',
     component: ProductsComponent,
     children: [
-      {
-        path: 'teacher',
-        component: TeacherComponent
-      },
-      {
-        path: 'student',
-        component: StudentComponent
-      }
+      { path: '', redirectTo: 'student', pathMatch: 'full' },
+      { path: 'student', component: StudentComponent },
+      { path: 'teacher', component: TeacherComponent }
     ]
   },
-  {path: 'statistics', component: StatisticsComponent},
-  {path: 'favorite', component: FavoriteComponent},
-  {path: 'pages', component: PagesComponent},
-  {path: 'media', component: MediaComponent},
-  {path: 'settings', component: SettingsComponent}
+  { path: 'statistics', component: StatisticsComponent },
+  { path: 'favorite', component: FavoriteComponent },
+  { path: 'pages', component: PagesComponent },
+  { path: 'media', component: MediaComponent },
+  { path: 'settings', component: SettingsComponent }
 ];
 
 @NgModule({

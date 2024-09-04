@@ -1,216 +1,132 @@
+/* Base styles for the sidebar */
 .sidenav {
-    background: #02aafe;
-    transition: all .5s ease;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    width: 5rem;
-    height: 100vh;
-    box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
-
-    .logo-container {
-        display: flex;
-        align-items: center;
-        padding: 0.938rem 0.938rem 0 0.938rem;
-        width: 100%;
-
-        .logo {
-            background: #fff;
-            text-align: center;
-            width: 3rem;
-            min-width: 3rem;
-            border-radius: 0.313rem;
-            padding: 0.313rem;
-            font-size: 24px;
-            font-weight: 900;
-            cursor: pointer;
-            border: none;
-        }
-
-        .logo-text {
-            margin-left: 1.5rem;
-            font-size: 24px;
-            font-weight: 700;
-            color: #fff;
-        }
-
-        .btn-close {
-            margin-left: auto;
-            cursor: pointer;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            background-color: transparent;
-            border: none;
-
-            .fa-times {
-                color: #fff;
-                font-size: 24px;
-            }
-        }
-    }
+  background: #02aafe;
+  transition: all 0.5s ease;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 5rem;
+  height: 100vh;
+  box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
 }
 
 .sidenav-collapsed {
-    width: 16.5625rem;
+  width: 16.5625rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 0.938rem;
+  width: 100%;
+}
+
+.logo {
+  background: #fff;
+  text-align: center;
+  width: 3rem;
+  min-width: 3rem;
+  border-radius: 0.313rem;
+  padding: 0.313rem;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  border: none;
+}
+
+.logo-text {
+  margin-left: 1.5rem;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.btn-close {
+  margin-left: auto;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+}
+
+.fa-times {
+  color: #fff;
+  font-size: 24px;
 }
 
 .sidenav-nav {
-    list-style: none;
-    padding: 0.938rem;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: calc(100% - 3.65rem);
-    cursor: pointer;
+  list-style: none;
+  padding: 0.938rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100% - 3.65rem);
+}
 
-    .sidenav-nav-item {
-        width: 100%;
-        margin-bottom: 0.625rem;
+.sidenav-nav-item {
+  width: 100%;
+  margin-bottom: 0.625rem;
+  position: relative;
+  /* Needed for child positioning */
+}
 
-        .sidenav-nav-link {
-            display: flex;
-            align-items: center;
-            height: 3rem;
-            color: #f3f3f3;
-            text-decoration: none;
-            border-radius: 0.625rem;
-            transition: all .3s ease;
+.sidenav-nav-link {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  color: #f3f3f3;
+  text-decoration: none;
+  border-radius: 0.625rem;
+  transition: all 0.3s ease;
+}
 
-            .sidenav-link-icon {
-                font-size: 22px;
-                width: 2rem;
-                min-width: 2rem;
-                margin: 0 0.5rem;
-                text-align: center;
-            }
+.sidenav-link-icon {
+  font-size: 22px;
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 0.5rem;
+  text-align: center;
+}
 
-            .sidenav-link-text {
-                margin-left: 1.5rem;
-            }
-        }
-    }
+.sidenav-link-text {
+  margin-left: 1.5rem;
+}
 
-    .sidenav-nav-item:hover {
-        .sidenav-nav-link {
-            background-color: #fff;
-            color: #000;
-        }
-    }
+.sidenav-nav-item:hover .sidenav-nav-link {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.sidenav-nav-children {
+  list-style: none;
+  padding: auto;
+  margin: auto;
+  padding-left: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.sidenav-nav-item:hover .sidenav-nav-children {
+  max-height: 400px;
+  /* Adjust based on content size */
+}
+
+/* Ensure child items are hidden when not hovered */
+.sidenav-nav-children li {
+  margin-top: auto;
+  padding-left: 1rem;
+  /* Indent child items */
 }
 
 .active {
-    background-color: #fff;
-
-    .sidenav-link-icon,
-    .sidenav-link-text {
-        color: #000;
-    }
+  background-color: #fff;
 }
 
-
-
-
-.sidenav {
-  // General styles for the sidenav
-  width: 250px;
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  overflow-x: hidden;
-  transition: width 0.3s;
-
-  &.sidenav-collapsed {
-    width: 80px;
-  }
-
-  .logo-container {
-    padding: 10px;
-    background: #34495e;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo-text {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-
-  .btn-close {
-    background: none;
-    border: none;
-    color: #ecf0f1;
-    font-size: 1.5em;
-  }
-
-  .sidenav-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    .sidenav-nav-item {
-      position: relative;
-
-      &.has-children {
-        cursor: pointer;
-
-        .sidenav-nav-link {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 10px;
-
-          &:hover {
-            background-color: #34495e;
-          }
-        }
-
-        .sidenav-nav-children {
-          display: none;
-          list-style: none;
-          padding: 0;
-          margin: 0;
-
-          .sidenav-nav-item {
-            padding-left: 20px;
-
-            .sidenav-nav-link {
-              padding: 10px;
-              display: flex;
-              align-items: center;
-
-              &:hover {
-                background-color: #2c3e50;
-              }
-            }
-          }
-        }
-
-        &.expanded .sidenav-nav-children {
-          display: block;
-        }
-      }
-
-      .sidenav-nav-link {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        color: #ecf0f1;
-        text-decoration: none;
-
-        &:hover {
-          background-color: #34495e;
-        }
-
-        .sidenav-link-icon {
-          margin-right: 10px;
-        }
-
-        .sidenav-link-text {
-          flex: 1;
-        }
-      }
-    }
-  }
+.active .sidenav-link-icon,
+.active .sidenav-link-text {
+  color: #000;
 }
